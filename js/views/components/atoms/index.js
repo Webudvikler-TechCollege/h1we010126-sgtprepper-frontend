@@ -50,3 +50,37 @@ export const Image = (src, title, className = '') => {
     element.title = title
     return element
 }
+
+export const createForm = (method = 'GET', className = '') => {
+    const el = document.createElement('form')
+    el.method = method
+    el.className = className
+    return el
+}
+
+export const createLabel = (title, id) => {
+    const el = document.createElement('label')
+    el.htmlFor = id
+    el.textContent = title
+    el.className = 'mr-4 w-[120px] inline-block'
+    return el
+}
+
+export const createInput = (type, name, placeholder, value = '', className = '') => {
+    const el = document.createElement('input')
+    el.type = type
+    el.name = name
+    el.autocomplete = true
+    el.placeholder = placeholder || ''
+    el.defaultValue = value
+    el.className = 'border border-gray-300 rounded px-3 py-2 w-[400px]'
+    return el
+}
+
+export const createButton = (title, type, className = 'text-white text-base border border-slate-400 px-2 py-1 rounded-md bg-slate-500 hover:bg-slate-800 inset-shadow ml-4') => {
+    const el = document.createElement('button')
+    el.type = type || 'submit'
+    el.className = className
+    el.textContent = title
+    return el
+}
