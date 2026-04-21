@@ -1,13 +1,10 @@
 import { Div, Heading, Image, Link, Paragraph } from "../components/atoms/index.js"
+import { createMainWrapper } from "../components/molecules/mainWrapper.js"
 
 export const productsView = (products, category_slug) => {
-    
     const root = document.querySelector('#root')
-
-    const div = Div()
-    const h1 = Heading(1, 'Produkter', 'font-bold text-2xl')
-    div.append(h1)
-    root.append(div)
+    const view = createMainWrapper('Produkter')
+    root.append(view)
 
     products.map(product => {
         const { name, imageUrl, teaser, price, stock, slug } = product 
