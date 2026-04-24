@@ -12,7 +12,7 @@ export const productView = (product) => {
     p.textContent = price
 
 
-    root.append(h1, p)
+    root.append(p)
 
 
 }

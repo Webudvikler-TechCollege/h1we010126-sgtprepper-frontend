@@ -1,9 +1,9 @@
 import { Div, Heading, Image, Link, Paragraph } from "../components/atoms/index.js"
 import { createMainWrapper } from "../components/molecules/mainWrapper.js"
 
-export const productsView = (products, category_slug) => {
+export const productsView = (products, category_slug, title = 'Produkter') => {
     const root = document.querySelector('#root')
-    const view = createMainWrapper('Produkter')
+    const view = createMainWrapper(title)
     root.append(view)
 
     products.map(product => {

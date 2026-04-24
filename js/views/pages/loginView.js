@@ -8,7 +8,6 @@ export const renderLoginPage = (handleLogin) => {
     root.append(view)
     
     const form = createForm()
-
     const username = createFormGroup('Brugernavn', 'text', 'username', 'Indtast brugernavn')
     const password = createFormGroup('Adgangskode', 'password', 'password', 'Indtast din adgangskode')
     const button = createButton('Login', 'submit')

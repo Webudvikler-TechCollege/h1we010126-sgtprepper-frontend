@@ -19,3 +19,12 @@ export const getProduct = async product_slug => {
         throw new Error('Request error on product details', { cause: error })           
     }
 }
+
+export const getAllProducts = async () => {
+    try {
+        const data = await request(url)
+        return data        
+    } catch (error) {
+        throw new Error('Request error on all products', { cause: error })        
+    }
+}
