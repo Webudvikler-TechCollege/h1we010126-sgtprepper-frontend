@@ -1,19 +1,29 @@
+export const createFragment = () => document.createDocumentFragment()
+
 // Paragraph Atom
-export const Paragraph = (className = '') => {
+export const createParagraph = (text, className = '') => {
     const element = document.createElement('p')
     element.className = className
+    element.innerHTML = text
     return element
 }
 
 // Div Atom
-export const Div = (className = '') => {
+export const createDiv = (className = '') => {
     const element = document.createElement('div')
     element.className = className
     return element
 }
 
+// Article Atom
+export const createArticle = (className = '') => {
+    const element = document.createElement('article')
+    element.className = className
+    return element
+}
+
 // Heading Atom
-export const Heading = (num, text, className = '') => {
+export const createHeading = (num, text, className = '') => {
     const element = document.createElement(`h${num}`)
     element.className = className
     element.innerText = text
@@ -21,28 +31,28 @@ export const Heading = (num, text, className = '') => {
 }
 
 // Ul Atom
-export const Ul = (className = '') => {
+export const createUl = (className = '') => {
     const element = document.createElement('ul')
     element.className = className
     return element
 }
 
 // Li Atom
-export const Li = (className = '') => {
+export const createLi = (className = '') => {
     const element = document.createElement('li')
     element.className = className
     return element
 }
 
 // Link Atom
-export const Link = (href, className = '') => {
+export const createLink = (href, className = '') => {
     const element = document.createElement('a')
     element.className = className
     element.href = href
     return element
 }
 
-export const Image = (src, title, className = '') => {
+export const createImage = (src, title, className = '') => {
     const element = document.createElement('img')
     element.src = src
     element.className = className

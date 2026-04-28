@@ -1,16 +1,16 @@
-import { Div, Heading } from "../components/atoms/index.js"
+import { createDiv, createFragment, createHeading } from "../components/atoms/index.js"
 
-const renderHeader = (loginBtn) => {
-    const header = document.querySelector('#header')
+export const createHeader = (loginBtn) => {
+    const header = createFragment()
 
-    const divLogo = Div()
-    const h1 = Heading(1, 'Sgt. Prepper', 'text-2xl font-bold')
+    const divLogo = createDiv()
+    const h1 = createHeading(1, 'Sgt. Prepper', 'text-2xl font-bold')
     divLogo.append(h1)
 
-    const divOpts = Div()
+    const divOpts = createDiv()
     divOpts.append(loginBtn)
 
     header.append(divLogo, divOpts)
-}
 
-export default renderHeader
+    return header
+}

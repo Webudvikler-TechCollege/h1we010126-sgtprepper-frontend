@@ -1,11 +1,9 @@
-// Tømmer indholdet af et HTML-element baseret på id
-export const clearElement = id => {
-    // Finder elementet i DOM'en via id
-    const element = document.querySelector(`#${id}`)
-
-    // Tjekker om elementet findes
-    if (element) {
-        // Fjerner alt indhold inde i elementet
-        element.innerHTML = ''
-    }
+ /**
+ * 
+ * @param {*} el 
+ */
+export const render = (targetId, htmlElement, clearTarget = false) => {
+    const el = document.getElementById(targetId)
+    if(clearTarget) el.innerHTML = ''
+    el.append(htmlElement)
 }

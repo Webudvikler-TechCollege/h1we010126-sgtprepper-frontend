@@ -1,7 +1,7 @@
-import { createInput, createLabel, Div } from "../atoms/index.js"
+import { createInput, createLabel, createDiv } from "../atoms/index.js"
 
 export const createFormGroup = (labelname, type, name, placeholder, value) => {
-    const el = Div()
+    const el = createDiv()
 
     const labelElm = createLabel(labelname, name)
     const inputElm = createInput(type, name, placeholder, value)

@@ -1,4 +1,4 @@
-import { Div, Heading, Paragraph } from "../atoms/index.js"
+import { createDiv, createHeading, createParagraph } from "../atoms/index.js"
 
 export const createMainWrapper = (title, description = '') => {
     document.title = title
@@ -13,12 +13,12 @@ export const createMainWrapper = (title, description = '') => {
 
     meta.content = description
 
-    const div = Div()
-    const h1 = Heading(1, title, 'font-bold text-2xl')
+    const div = createDiv()
+    const h1 = createHeading(1, title, 'font-bold text-2xl')
     div.append(h1)
 
     if(description) {
-        const teaser = Paragraph()
+        const teaser = createParagraph()
         teaser.textContent = description
         div.append(teaser)
     }

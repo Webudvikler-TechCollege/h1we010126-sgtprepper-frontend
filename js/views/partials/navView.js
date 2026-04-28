@@ -1,19 +1,15 @@
-import { Li, Link, Ul } from "../components/atoms/index.js"
+import { createLi, createLink, createUl } from "../components/atoms/index.js"
 
-const renderNav = async data => {
-    const nav = document.querySelector('#nav')
-
-    const ul = Ul('flex')
+export const createNav = async data => {
+    const ul = createUl('flex')
 
     data.map(item => {
-        const li = Li('mr-6')
-        const a = Link(`/index.htm#/produkter/${item.slug}`)
+        const li = createLi('mr-6')
+        const a = createLink(`/index.htm#/produkter/${item.slug}`)
         a.innerText = item.title
         li.append(a)
         ul.append(li)        
     })
-    nav.append(ul)
+    return ul
 
 }
-
-export default renderNav

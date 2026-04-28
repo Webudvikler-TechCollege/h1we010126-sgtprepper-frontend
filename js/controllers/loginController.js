@@ -1,11 +1,14 @@
 import { Authenticate } from "../models/loginModel.js"
 import { isLoggedIn, logout } from "../utils/auth.js"
 import { setCookie } from "../utils/cookies.js"
+import { render } from "../utils/dom.js"
 import { createLoginButton } from "../views/components/molecules/loginButton.js"
-import { renderLoginPage } from "../views/pages/loginView.js"
+import { createLoginPage } from "../views/pages/loginView.js"
 
 export const loginController = () => {
-    renderLoginPage(handleLogin)
+    const viewHtml = createLoginPage(handleLogin)
+    render('root', viewHtml, true)
+
 }
 
 export const handleLogin = async e => {

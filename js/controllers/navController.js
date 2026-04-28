@@ -1,9 +1,12 @@
 import { getCategoryList } from "../models/categoryModel.js"
-import renderNav from "../views/partials/navView.js"
+import { render } from "../utils/dom.js"
+import { createNav } from "../views/partials/navView.js"
+
 
 const navController = async () => {
     const data = await getCategoryList()
-    renderNav(data)
+    const viewHtml = await createNav(data)
+    render('nav', viewHtml)
 }
 
 export default navController

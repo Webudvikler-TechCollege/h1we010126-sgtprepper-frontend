@@ -2,10 +2,8 @@ import { createButton, createForm } from "../components/atoms/index.js"
 import { createFormGroup } from "../components/molecules/formGroup.js"
 import { createMainWrapper } from "../components/molecules/mainWrapper.js"
 
-export const renderLoginPage = (handleLogin) => {
-    const root = document.querySelector('#root')
+export const createLoginPage = (handleLogin) => {
     const view = createMainWrapper('Login')
-    root.append(view)
     
     const form = createForm()
     const username = createFormGroup('Brugernavn', 'text', 'username', 'Indtast brugernavn')
@@ -17,5 +15,6 @@ export const renderLoginPage = (handleLogin) => {
         handleLogin(e)
     })
 
-    root.append(form)
+    view.append(form)
+    return view
 }
